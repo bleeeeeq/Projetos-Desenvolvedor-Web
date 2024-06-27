@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulários</title>
+</head>
+<body>
+    <form action="#" method="post">
+        <h1>Formulário de exemplo</h1>
+
+        <label for="Nome">Nome:</label>
+        <input type="text" placeholder="Digite seu nome" name="Nome" id="idNome" required maxlength="250">
+       
+        <br><br>
+
+        <label for="idade">Idade:</label>
+        <select name="Idade" id="idIdade">
+            <option value="1p10">De 1 à 10</option>
+            <option value="11p20" selected>De 11 à 20</option>
+            <option value="21p30">De 21 à 30</option>
+            <option value="31p40">De 31 à 40</option>
+            <option value="41p50">De 41 à 50</option>
+            <option value="41p50">De 51 à 60</option>
+            <option value="41p50">De 61 à 70</option>
+            <option value="41p50">De 71 à 80</option>
+            <option value="41p50">De 81 à 90</option>
+            <option value="41p50">De 91 à 100</option>
+            <option value="41p50">De 101 à 110</option>
+        </select>
+
+        <br><br>
+
+        <label for="Email">Email:</label>
+        <input type="email" placeholder="Digite seu email" name="Email" id="idEmail" >
+        <input type="submit" value="Verificar no sistema">       
+
+        <br><br>
+
+        <label for="Senha">Senha:</label>
+        <input type="password" placeholder="Digite sua senha" name="Senha" id="idSenha">
+
+        <br><br>
+
+        <label for="RA">RA:</label>
+        <input type="number" placeholder="Digite seu RA" name="RA" id="idRA" maxlength = "6" 
+        oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+
+        <br><br>
+
+        <label for="Codigo">Código:</label>
+        <input type="number" placeholder="Código" name="Codigo" id="idCodigo" min="001" max="999">
+
+        <br><br>
+
+        <label for="data">Data:</label>
+        <input type="date" name="Data" id="idData" min="2000-01-01" max="2050-12-31">
+        
+        <br><br>
+
+        <fieldset>
+            <legend>Exemplo de Listas</legend>
+
+            <label for="idPais">País de origem:</label>
+            <input type="text" name="Paises" id="idPaises" list="listapaises" required>
+            
+            <datalist id="listapaises">
+                <option value="BRA">Brasil</option>
+                <option value="JPN">Japão</option>
+                <option value="PHL">Filipinas</option>
+                <option value="ZWE">Zimbabwe</option>
+            </datalist>
+        </fieldset>
+
+        <br><br>
+
+        <button>Login</button>
+        <input type="submit" value="Enviar">
+        <input type="reset" value="Apagar">
+    </form>
+</body>
+</html>

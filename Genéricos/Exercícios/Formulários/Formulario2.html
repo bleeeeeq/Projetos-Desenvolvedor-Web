@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício Formulários ( 2 )</title>
+</head>
+<body>
+    
+    <h1>Justifique sua entrada na lista de espera</h1>
+    <br>
+    <form action="">
+        <h2>Dados Pessoais</h2>      
+        <label>Gênero</label>
+        <br>
+            <input type="radio" name="Genero" id="idGenero" value="Masculino">
+            <label for="Genero">Masculino</label>
+            <br>
+
+            <input type="radio" name="Genero" id="idGenero" value="Feminino">
+            <label for="Genero">Feminino</label>
+            <br>
+
+            <input type="radio" name="Genero" id="idGenero" value="Outro">
+            <label for="Genero">Outro</label>
+            <br>
+        
+            <br><hr><hr>
+
+        <h2>Necessidade</h2>
+        <label for="Necessidade">Qual o grau de necessidade?</label>
+        <br>
+            <input type="radio" name="Necessidade" id="idNecessidade" value="Muito">
+            <label for="Necessidade">Necessito Muito</label>
+            <br>
+
+            <input type="radio" name="Necessidade" id="idNecessidade" value="Pouco">
+            <label for="Necessidade">Necessito Pouco</label>
+            <br>
+
+            <input type="radio" name="Necessidade" id="idNecessidade" value="Necessito">
+            <label for="Necessidade">Necessito</label>
+            <br><br>
+
+        <label>Justifique sua necessidade:</label>
+        <br>
+            <textarea id="idJustifique" placeholder="Justifique sua necessidade aqui!" name="Justifique" rows="4" cols="30" required></textarea>  
+            <br>
+            
+            <br><hr><hr>
+
+        <h2>Escolaridade</h2>
+        <label>Qual seu nível escolar?</label>
+        <br>
+        <label for="Escolar">Sua escolaridade:</label>   
+        <select name="Escolar" id="idEscolar">
+            <option value="FundamentalIncompleto">Ensino Fundamental Incompleto</option>
+            <option value="FundamentalCompleto">Ensino Fundamental Completo</option>
+            <option value="MedioIncompleto">Ensino Médio Incompleto</option>
+            <option value="MedioCompleto">Ensino Médio Completo</option>
+            <option value="SuperiorIncompleto">Ensino Superior Incompleto</option>
+            <option value="SuperiorCompleto">Ensino Superior Completo</option>
+            <option value="PosGraduacao">Pós-Graduação</option>
+            <option value="Mestrado">Mestrado</option>
+            <option value="Doutorado">Doutorado</option>
+            <option value="SeniorSharp">Sênior #</option>
+            <option value="SeniorScript">Sênior Script</option>
+        </select>
+
+        <br><br><hr><hr>
+        <br>
+        <input type="submit" value="Enviar">
+        <input type="reset" value="Apagar">
+        <br><br><hr><hr><br>
+
+        <a href="../Formulários/Formulario.html">Página Inicial</a>
+        <br><br>
+        <a href="../Formulários/Formulario3.html">Próxima página</a>
+        <br><br>
+        <a href="../Formulários/Formulario.html">Página anterior</a>
+
+    </form>
+</body>
+</html>

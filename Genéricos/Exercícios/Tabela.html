@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabela</title>
+
+    <style>
+        table{
+            text-align: center;
+            border: 5px blue double;
+        }
+
+        table th{
+            border: 5px blue double;
+            color: indigo;
+            
+        }
+
+        /* Especificando as cores para linhas pares, também é possível trocar o "even" por odd para ser linhas ímpares! */ 
+        table td:nth-child(even){
+            border: 3px green dashed;
+            background-color: antiquewhite;
+            color: indigo;
+        }
+        
+        table td, table th{
+            border: 3px black outset;
+            background-color: antiquewhite;
+        }
+
+        h1{
+            text-align: center;
+            color: green;
+            font-size: 50px;
+            font-weight: 400;
+        }
+    </style>
+
+</head>
+<body>
+    <h1>Tabela de siglas</h1>
+    <table>
+        <thead>
+            <tr>
+                <th style="color: red;">Siglas</th>
+                <th style="color: green;">Estados</th>
+                <th style="color: blue;">Cidades</th>
+            </tr>
+        </thead>
+        <tr>
+            <td>MG</td>
+            <td>Minas Gerais</td>
+            <td>853</td>
+        </tr>
+        <tr>
+            <td>RJ</td>
+            <td>Rio de Janeiro</td>
+            <td>92</td>
+        </tr>
+        <tr>
+            <td>SP</td>
+            <td>São Paulo</td>
+            <td>645</td>
+        </tr>
+        <tr>
+            <td colspan="2" style="border: 3px black dashed; color: red"><b>Total de cidades do país</b></td>
+            <td style="border: 3px black dashed; color: red"><b>5570</b></td>
+        </tr>
+    </table>
+
+    <br><br><br>
+    <hr color="red"><hr color="green"><hr color="blue">
+    <br>
+
+    <h1>Tabela com tags semânticas</h1>
+    <table>
+        <thead>
+            <tr>
+                <th style="color: red;">Sabores</th>
+                <th style="color: green;">Origem</th>
+                <th style="color: blue;">Tipo de Prato</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Macarronada</td>
+                <td>Itália</td>
+                <td>Refeição</td>
+            </tr>
+            <tr>
+                <td>Mochi</td>
+                <td>Japão</td>
+                <td>Sobremesa</td>
+            </tr>           
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3" style="border: 3px black dashed;color: red;"><b>Informações da minha cabeça</b></td>
+            </tr>
+        </tfoot>
+    </table>
+
+</body>
+</html>

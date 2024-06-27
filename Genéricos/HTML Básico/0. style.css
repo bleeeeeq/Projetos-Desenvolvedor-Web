@@ -1,0 +1,36 @@
+.paragrafo1 {
+    background-color: bisque;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 15px;
+    line-height: 1.5; /* Distância entre linhas */
+    margin: 5px;
+    text-indent: 1em; /* Adicionando espaço do paragráfo na primeira linha */
+    text-align: justify;
+    padding: 1px;
+}
+
+.paragrafo2{
+    background-image: linear-gradient(15deg, rgb(54, 164, 192), rgb(223, 236, 35));
+    font-weight: bold;
+    color: blue;
+    font-family: Georgia, 'Courier New', Courier, monospace;
+    font-size: 22px;
+    line-height: 1.5;
+    margin: 5px;
+    text-align: right;
+    padding: 1px;
+}
+
+cite{
+    text-decoration: underline;
+}
+
+.autor{
+    text-align: right;
+}
+
+#meuId{
+    margin-top: 25px;
+    border: 5px rgb(41, 111, 192) dashed;
+    padding: 15px;
+}

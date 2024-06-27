@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício Formulários ( 3 )</title>
+</head>
+<body>
+    <h1>Formulário de Personalidade e Saúde Mental</h1>
+    <br><br>
+    <form action="#" method="get" oninput="resultado.value=(parseInt(num1.value)+parseInt(num2.value))">
+    
+        <h2>Suas Características Positivas</h2>
+        <br>
+
+        <label for="Opcoes">Marque as características que mais combinam com você</label>
+        <br><br>
+        
+        <input type="checkbox" name="Caracteristicas" id="idAlegre" value="Alegre">
+        <label for="idAlegre">Alegre</label><br>
+        
+        <input type="checkbox" name="Caracteristicas" id="idAmigavel" value="Amigável">
+        <label for="idAmigavel">Amigável</label><br>
+        
+        <input type="checkbox" name="Caracteristicas" id="idCriativo" value="Criativo">
+        <label for="idCriativo">Criativo</label><br>
+        
+        <input type="checkbox" name="Caracteristicas" id="idCurioso" value="Curioso">
+        <label for="idCurioso">Curioso</label><br>
+        
+        <input type="checkbox" name="Caracteristicas" id="idEmpatico" value="Empático">
+        <label for="idEmpatico">Empático</label><br>
+        
+        <input type="checkbox" name="Caracteristicas" id="idGeneroso" value="Generoso">
+        <label for="idGeneroso">Generoso</label><br>
+        
+        <input type="checkbox" name="Caracteristicas" id="idInteligente" value="Inteligente">
+        <label for="idInteligente">Inteligente</label><br>
+        
+        <input type="checkbox" name="Caracteristicas" id="idOrganizado" value="Organizado">
+        <label for="idOrganizado">Organizado</label><br>
+
+        <br><hr><hr>
+
+        <h2>Saúde Mental</h2>
+        <label for="idSaudeMental">Selecione o que melhor se identifica</label>
+        <select name="SaudeMental" id="idSaudeMental" required>
+            <optgroup label="Psicólogo">
+                <option value="NuncaFui">Nunca fui</option>
+                <option value="JaFui">Já fui</option>
+                <option value="EstouIndo">Estou indo</option>
+            </optgroup>
+            <optgroup label="Outro Profissional">
+                <option value="Outro">Outro Psiquiátra</option>
+                <option value="Nunca">Nunca Precisei</option>
+            </optgroup>
+        </select>
+
+        <br><br><hr><hr><br>
+
+        <fieldset>
+            <legend>Conclusão</legend>
+
+            <p>Faça a soma para realizar seu cadastro</p>
+            <label for="idNum1">Número 1:</label>
+            <input type="number" name="num1" id="idNum1">
+            <br>
+
+            <label for="idNum2">Número 2:</label>
+            <input type="number" name="num2" id="idNum2">
+            <br>
+
+            <label for="resultado">Resultado da soma: </label>
+            <output name="resultado" id="resultado">X</output>
+            <br><br>
+            
+        </fieldset>
+        
+        <script>
+            function VerificarCaracteristicas(){
+                const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+                let selectCount = 0;
+
+                for(const checkbox of checkboxes) {
+                    if (checkbox.checked){
+                        selectCount++
+                    }
+                }
+
+                if (selectCount < 1){
+                    alert('Selecione pelo menos 1 característica');
+                }
+                else if (selectCount >= 1 & selectCount <= 3){
+                    alert('Você selecionou'+(selectCount)+'características! \z Suas informações foram salvas! \n Boa sorte!');
+                }
+                else if(selectCount > 3){
+                    alert('Selecione no máximo 3 características.');
+                }
+            }
+        </script>
+
+        <br><br><hr><hr>
+        <br>
+        <button onclick="VerificarCaracteristicas()">Enviar</button>
+        <input type="reset" value="Apagar">
+        <br><br><hr><hr><br>
+
+        <a href="../Formulários/Formulario.html">Página Inicial</a>
+        <br><br>
+        <a href="https://github.com/bleeeeeq">Próxima página</a>
+        <br><br>
+        <a href="../Formulários/Formulario2.html">Página anterior</a>
+    </form>
+</body>
+</html>

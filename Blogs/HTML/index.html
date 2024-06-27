@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogzin</title>
+    <link rel="shortcut icon" href="../IMG/Utilitário/Icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="styleINDEX.css">
+</head>
+<body>
+    <header>
+        <h1 id="titulo">Blog q n tem nome</h1>
+        <nav>          
+            <div class="menu">
+                <!-- Dentro das href, foram criadas âncoras com o # seguido do respectivo nome da sessão -->
+                <a href="#introducao">Introdução</a>
+                <a href="#assuntodasemana">Assunto da Semana</a>
+                <a href="#horoscopo">Horóscopo</a>
+                <a href="#quemsoueu">Quem sou Eu</a>
+                <a href="#contato">Contato</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div id="introducao" class="section">
+            <h1>Introdução</h1>
+            <p>Seja bem vindo ao meu blog! Aqui você encontrará uma variedade de conteúdos interessantes</p>
+        </div>
+        
+        <div id="assuntodasemana" class="section">
+            <h1>Assunto da Semana</h1>
+            <p>Essa semana estamos discutindo sobre..</p>
+
+            <label for="dias-semana">Escolha um dia da semana: </label>
+            <select name="dias-semana" id="dias-semana" onchange="iframedia()">
+                <option value="./Dias/Segunda.html">segunda-feira</option>
+                <option value="./Dias/Terca.html">terça-feira</option>
+                <option value="./Dias/Quarta.html">quarta-feira</option>
+                <option value="./Dias/Quinta.html">quinta-feira</option>
+                <option value="./Dias/Sexta.html">sexta-feira</option>
+                <option value="./Dias/Sabado.html">sábado</option>
+            </select>
+            <iframe id="iframedia" src="" frameborder="0"></iframe>
+        </div>
+
+        <div id="horoscopo" class="section">
+            <h1>Horóscopo</h1>
+            <p>Confira o seu horóscopo diário</p>
+        </div>
+
+        <div id="quemsoueu" class="section">
+            <h1>Quem sou Eu</h1>
+            <p>Saiba mais sobre mim..</p>
+        </div>
+
+        <div id="contato" class="section">
+            <h1>Contato</h1>
+            <p>Entre em contato comigo através do whatsapp!</p>
+        </div>
+
+    </main>
+
+    <script>
+        function iframedia(){
+            var select = document.getElementById("dias-semana")
+            var iframe = document.getElementById("iframedia")
+            var dia = select.value;
+
+            if (dia){
+                iframe.src = dia;
+                iframe.style.display = "block"; // Exibe o iFrame
+            }
+            else {
+                iframe.style.display = "none"; // Oculta o iFrame
+            }
+        }
+    </script>
+
+</body>
+</html>
