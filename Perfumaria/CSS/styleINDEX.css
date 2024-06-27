@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+
+header{
+    background-color: rgba(231, 212, 189, 0.473);   
+    padding: 20px 0;
+    box-shadow: 0 2px 4px rgba(231, 212, 189, 0.966);
+    text-align: center;
+    margin-inline: 0;
+}
+
+footer{
+    background-color: rgba(231, 212, 189, 0.473);   
+    padding: 20px 0;
+    box-shadow: 4px 2px 4px 4px rgba(231, 212, 189, 0.966);
+        
+    text-align: center;
+    list-style: none;
+    margin-inline: 0;
+    margin-top: 50px;
+}
+
+footer ul{
+    list-style: none;
+}
+
+body{
+    font-family: 'Abel', 'Courier New';
+    margin: 0;
+    padding: 0;
+    background-color: rgba(231, 212, 189, 0.473);
+    color: #333;
+}
+
+section{
+    margin-bottom: 40px;
+    width: 100%;
+}
+
+section h2{
+    margin-bottom: 20px;
+}
+
+h1{
+    font-size: 60px;
+    text-align: center;
+}
+
+#titulo{
+    text-align: center;
+}
+
+#banner{
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 90%;
+    height: 650px;
+    object-fit: cover;
+    overflow: hidden;
+
+    border: 5px;
+    border-radius: 20px;
+}
+
+#imgnoticia{
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    transition: 0.3s ease;  
+    
+    border: 5px;
+    border-radius: 20px;
+}
+
+#imgnoticia:hover{
+    transform: scale(1.2);
+}
+
+#coluna{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;   
+}
+
+aside{
+    flex: 0 0 300px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+aside video{
+    width: 350px;
+    height: auto;
+
+    border: 5px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+
+nav ul{    
+    list-style-type: none; /*Tirando a marcação da lista*/
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li{
+    position: relative;
+    display: inline-block;
+}
+
+nav ul li a{
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+}
+
+nav ul li a:hover{
+    color: black;
+    background-color: rgb(240, 174, 53);
+}
+
+.dropdown-child{
+    display: none;
+    background-color: #333;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 160px;
+}
+
+.dropdown-child li{
+    display: block;
+}
+
+.dropdown-child a{
+    color: orange;
+    padding: 5px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown:hover .dropdown-child{
+    display: block;
+}

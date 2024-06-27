@@ -1,0 +1,32 @@
+.tablefem {
+    text-align: center;
+}
+
+.img p{
+    flex: 1;
+   
+   
+}
+
+.img img{
+    border: 5px;
+    border-radius: 40px; 
+    margin-left: 70px;
+
+    border: 8px solid rgb(207, 192, 174);
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+    
+    max-width: 40%; /* Define a largura máxima da imagem */
+    margin-right: 20px; 
+    
+}
+
+.img{
+    display: flex;
+    align-items: center; /* Centraliza verticalmente os itens */
+    justify-content: center; /* Centraliza horizontalmente os itens */
+    max-width: 800px; /* Ajuste conforme necessário */
+    margin: 0 auto; /* Centraliza o container na página */
+}

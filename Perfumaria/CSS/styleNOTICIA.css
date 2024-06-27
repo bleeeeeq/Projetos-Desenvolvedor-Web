@@ -1,0 +1,33 @@
+img{
+    width: 25%;     
+    border: 5px;
+    border-radius: 40px; 
+    margin-left: 70px;
+
+ /*  border: 5px solid rgb(207, 192, 174);*/
+    box-shadow: 0 10px 0 0;
+    box-shadow: 0 0 10px 0;
+    box-shadow: 0 0 0 10px;
+    color: rgb(207, 192, 174);
+}
+
+.navpags{
+    text-align: center;
+    padding-bottom: 25px;
+    padding-top: 55px;
+}
+
+article{
+    padding: 9px 40px 9px 40px;
+    border: 5px;
+    border-radius: 20px;
+    background-color: rgba(231, 212, 189, 0.473);
+    margin-bottom: 10px;
+}
+
+header{
+    margin-bottom: 10px;
+}
+ #imgnot{
+    padding: 20px;
+}
