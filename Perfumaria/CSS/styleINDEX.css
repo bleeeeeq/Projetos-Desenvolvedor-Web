@@ -72,7 +72,7 @@ h1{
 }
 
 #imgnoticia:hover{
-    transform: scale(1.2);
+    transform: scale(1.2); /* Fazendo a imagem aumentar seu tamanho quando passa o mouse por cima */
 }
 
 #coluna{
@@ -99,7 +99,7 @@ aside video{
 }
 
 nav ul{    
-    list-style-type: none; /*Tirando a marcação da lista*/
+    list-style-type: none; /* Tirando a marcação da lista */
     padding: 0;
     margin: 0;
 }
@@ -127,8 +127,12 @@ nav ul li a:hover{
     background-color: #333;
     position: absolute;
     top: 100%;
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%);
     min-width: 160px;
+
+    border-radius: 20px; /* Adiciona bordas arredondadas */
+    overflow: hidden; /* Garante que o conteúdo dentro do submenu também tenha bordas arredondadas */
 }
 
 .dropdown-child li{
@@ -140,6 +144,8 @@ nav ul li a:hover{
     padding: 5px;
     text-decoration: none;
     display: block;
+
+    border-radius: 20px; /* Adiciona bordas arredondadas aos links */
 }
 
 .dropdown:hover .dropdown-child{
