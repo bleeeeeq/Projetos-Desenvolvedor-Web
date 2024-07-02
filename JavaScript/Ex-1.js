@@ -1,4 +1,4 @@
-// Exercício de JS
+// Exercício [Calculadora] de JS
 
 let num1 = parseFloat(window.prompt('Digite um número:'))
 let num2 = parseFloat(window.prompt('Digite outro número:'))
