@@ -9,6 +9,7 @@
 
 <body>
     <h1>Exemplo de JS externo</h1>
+    <div id="info"></div>
 
     <script>
         let ex = parseFloat(window.prompt('Qual exercício deseja ver? '));
@@ -37,11 +38,22 @@
             document.body.appendChild(script);
         } 
 
+        else if (ex === 5) {
+            let script = document.createElement('script');
+            script.src = 'Ex-5.js';
+            document.body.appendChild(script);
+        } 
+
+        else if (ex === 6) {
+            let script = document.createElement('script');
+            script.src = 'Ex-6.js';
+            document.body.appendChild(script);
+        } 
+
         else {
             alert('Nenhum exercício encontrado.');
         }       
     </script>
 
 </body>
-
 </html>
