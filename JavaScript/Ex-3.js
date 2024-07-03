@@ -2,7 +2,7 @@
 
 let idade = parseFloat(window.prompt("Digite sua Idade:"))
 
-if(idade <= 6){
+if(idade <= 6 || idade > 60){
     alert("Não paga passagem")
     alert("Seja Bem Vindo!!")
 }
