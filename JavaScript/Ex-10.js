@@ -1,13 +1,13 @@
 // Exercício [Rendimento mês] de JS
 
-let num = parseFloat(window.prompt("Qual valor você depositou esse mês?"))
-const juros = 0.7
+let deposito = parseFloat(window.prompt("Qual valor você depositou esse mês?"));
+const taxa = 0.7;
 
-let porc = parseFloat(num * juros)/100
-alert (porc) 
+let juros = deposito * (taxa / 100);
+alert(`Valor dos juros: R$${juros.toFixed(2)}`);
 
-let total = parseFloat(num+porc)
-alert(`Após um mês, seu depósito de ${num} se tornará ${total}!`)
+let total = deposito + juros;
+alert(`Após um mês, seu depósito de R$${deposito.toFixed(2)} se tornará R$${total.toFixed(2)}!`);
 
 /*
 Outro método de resolução]
