@@ -5,84 +5,62 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exemplo X de JavaScript</title>
+    <style>
+        body {
+            background-color: gray;
+            color: white;
+        }
+        #resultado {
+            display: none;
+        }
+    </style>
 </head>
-
 <body>
     <h1>Exemplo de JS externo</h1>
     <div id="info"></div>
+    <textarea id="resultado" cols="30" rows="25" placeholder="Resultado da tabuada"></textarea>
 
     <script>
-        let ex = parseFloat(window.prompt('Qual exercício deseja ver? '));
+        let num, tabuada;
 
-        if (ex === 1) {
+        // Perguntar ao usuário qual exercício deseja ver
+        let ex = parseFloat(window.prompt('Qual exercício deseja ver? \nAtualmente, temos do exercício 1 ao 13!'));
+
+        // Verificar qual exercício foi escolhido
+        if (ex >= 1 && ex <= 12) {
             let script = document.createElement('script');
-            script.src = 'Ex-1.js';
+            script.src = 'Ex-' + ex + '.js';
             document.body.appendChild(script);
         } 
 
-        else if (ex === 2) {
-            let script = document.createElement('script');
-            script.src = 'Ex-2.js';
-            document.body.appendChild(script);
-        } 
+        else if (ex === 13) {
+            
+        // Função para calcular e preencher a tabuada [Exercício 13]
+        function calcularTabuada(numero) {
+            let tabuada = "";
+            let linha = "";
+            tabuada += linha + "-=-=-=-=-=-=-=-=-=-=-\n";
+            for (let i = 1; i <= 10; i++) {
+                linha = "< " + numero + " x " + i + " = " + (numero * i);
+                tabuada += linha + "\n-=-=-=-=-=-=-=-=-=-=-\n";
+            }
+            return tabuada;
+        }
 
-        else if (ex === 3) {
-            let script = document.createElement('script');
-            script.src = 'Ex-3.js';
-            document.body.appendChild(script);
+            num = window.prompt("Digite um número para visualizar sua tabuada:");
+            let tabuada = calcularTabuada(num);
+            let textarea = document.getElementById('resultado');
+            if (textarea) {
+                textarea.textContent = tabuada;
+                textarea.style.display = 'block';
+            }
+            else {
+                console.error('Textarea não encontrada no documento.');
+            }
         } 
-
-        else if (ex === 4) {
-            let script = document.createElement('script');
-            script.src = 'Ex-4.js';
-            document.body.appendChild(script);
-        } 
-
-        else if (ex === 5) {
-            let script = document.createElement('script');
-            script.src = 'Ex-5.js';
-            document.body.appendChild(script);
-        } 
-
-        else if (ex === 6) {
-            let script = document.createElement('script');
-            script.src = 'Ex-6.js';
-            document.body.appendChild(script);
-        } 
-
-        else if (ex === 7) {
-            let script = document.createElement('script');
-            script.src = 'Ex-7.js';
-            document.body.appendChild(script);
-        } 
-
-        else if (ex === 8) {
-            let script = document.createElement('script');
-            script.src = 'Ex-8.js';
-            document.body.appendChild(script);
-        } 
-
-        else if (ex === 9) {
-            let script = document.createElement('script');
-            script.src = 'Ex-9.js';
-            document.body.appendChild(script);
-        } 
-
-        else if (ex === 10) {
-            let script = document.createElement('script');
-            script.src = 'Ex-10.js';
-            document.body.appendChild(script);
-        } 
-
-        else if (ex === 11) {
-            let script = document.createElement('script');
-            script.src = 'Ex-11.js';
-            document.body.appendChild(script);
-        } 
-
         else {
             alert('Nenhum exercício encontrado.');
-        }       
+        }              
     </script>
 
 </body>
