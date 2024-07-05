@@ -1,3 +1,5 @@
+// Exercício [Dia da semana] de JS
+
 let num = window.prompt("Digite um número de 1 a 7:")
 
 if (/^[0-9.,]+$/.test(num)) {
