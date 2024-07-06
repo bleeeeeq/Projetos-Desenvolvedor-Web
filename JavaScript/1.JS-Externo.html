@@ -24,40 +24,41 @@
         let num, tabuada;
 
         // Perguntar ao usuário qual exercício deseja ver
-        let ex = parseFloat(window.prompt('Qual exercício deseja ver? \nAtualmente, temos do exercício 1 ao 13!'));
+        let ex = parseFloat(window.prompt('Qual exercício deseja ver? \nAtualmente, temos do exercício 1 ao 14!'));
+
+        if (ex === 13) {
+            
+            // Função para calcular e preencher a tabuada [Exercício 13]
+            function calcularTabuada(numero) {
+                let tabuada = "";
+                let linha = "";
+                tabuada += linha + "-=-=-=-=-=-=-=-=-=-=-\n";
+                for (let i = 1; i <= 10; i++) {
+                    linha = "< " + numero + " x " + i + " = " + (numero * i);
+                    tabuada += linha + "\n-=-=-=-=-=-=-=-=-=-=-\n";
+                }
+                return tabuada;
+            }
+    
+                num = window.prompt("Digite um número para visualizar sua tabuada:");
+                let tabuada = calcularTabuada(num);
+                let textarea = document.getElementById('resultado');
+                if (textarea) {
+                    textarea.textContent = tabuada;
+                    textarea.style.display = 'block';
+                }
+                else {
+                    console.error('Textarea não encontrada no documento.');
+                }              
+            } 
 
         // Verificar qual exercício foi escolhido
-        if (ex >= 1 && ex <= 12) {
+        else if (ex >= 1 && ex <= 14) {
             let script = document.createElement('script');
             script.src = 'Ex-' + ex + '.js';
             document.body.appendChild(script);
-        } 
-
-        else if (ex === 13) {
-            
-        // Função para calcular e preencher a tabuada [Exercício 13]
-        function calcularTabuada(numero) {
-            let tabuada = "";
-            let linha = "";
-            tabuada += linha + "-=-=-=-=-=-=-=-=-=-=-\n";
-            for (let i = 1; i <= 10; i++) {
-                linha = "< " + numero + " x " + i + " = " + (numero * i);
-                tabuada += linha + "\n-=-=-=-=-=-=-=-=-=-=-\n";
-            }
-            return tabuada;
-        }
-
-            num = window.prompt("Digite um número para visualizar sua tabuada:");
-            let tabuada = calcularTabuada(num);
-            let textarea = document.getElementById('resultado');
-            if (textarea) {
-                textarea.textContent = tabuada;
-                textarea.style.display = 'block';
-            }
-            else {
-                console.error('Textarea não encontrada no documento.');
-            }
-        } 
+        }            
+         
         else {
             alert('Nenhum exercício encontrado.');
         }              
