@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,11 +11,13 @@
             background-color: gray;
             color: white;
         }
+
         #resultado {
             display: none;
         }
     </style>
 </head>
+
 <body>
     <h1>Exemplo de JS externo</h1>
     <div id="info"></div>
@@ -22,13 +25,14 @@
 
     <script>
         let num, tabuada;
+        let contador, contagem;
 
         // Perguntar ao usuário qual exercício deseja ver
         let ex = parseFloat(window.prompt('Qual exercício deseja ver? \nAtualmente, temos do exercício 1 ao 14!'));
 
         if (ex === 13) {
-            
-            // Função para calcular e preencher a tabuada [Exercício 13]
+
+            // Função para calcular e preencher a tabuada [ Exercício 13 ]
             function calcularTabuada(numero) {
                 let tabuada = "";
                 let linha = "";
@@ -39,30 +43,38 @@
                 }
                 return tabuada;
             }
-    
-                num = window.prompt("Digite um número para visualizar sua tabuada:");
-                let tabuada = calcularTabuada(num);
-                let textarea = document.getElementById('resultado');
-                if (textarea) {
-                    textarea.textContent = tabuada;
-                    textarea.style.display = 'block';
-                }
-                else {
-                    console.error('Textarea não encontrada no documento.');
-                }              
-            } 
+
+            num = window.prompt("Digite um número para visualizar sua tabuada:");
+            let tabuada = calcularTabuada(num);
+            let textarea = document.getElementById('resultado');
+            if (textarea) {
+                textarea.textContent = tabuada;
+                textarea.style.display = 'block';
+            }
+            else {
+                console.error('Textarea não encontrada no documento.');
+            }
+        }
+
+        if (ex === 15) {
+
+            // Contador [ Exercício 15 ]
+            
+        }
+        
 
         // Verificar qual exercício foi escolhido
         else if (ex >= 1 && ex <= 14) {
             let script = document.createElement('script');
             script.src = 'Ex-' + ex + '.js';
             document.body.appendChild(script);
-        }            
-         
+        }
+
         else {
             alert('Nenhum exercício encontrado.');
         }              
     </script>
 
 </body>
+
 </html>
