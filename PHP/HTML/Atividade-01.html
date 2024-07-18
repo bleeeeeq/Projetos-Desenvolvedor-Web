@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 01</title>
+</head>
+
+<body>
+    <h1>Formulário PHP</h1>
+
+    <form action="../PHP/Atividade-01.php" method="get">
+        <label for="nome">Digite seu nome:</label>
+        <input type="text" name="nome" id="idNome" placeholder="Digite seu nome"><br>
+
+        <label for="ano">Digite seu ano de nascimento:</label>
+        <input type="number" name="ano" id="idAno">
+
+        <fieldset>
+            <legend>Sexo</legend>
+            <input type="radio" name="sexo" id="idSexoM" value="masculino">
+            <label for="idSexoM">Masculino</label>
+            <input type="radio" name="sexo" id="idSexoF" value="feminino">
+            <label for="idSexoF">Feminino</label>
+        </fieldset>
+        <input type="submit">
+    </form>
+
+</body>
+
+</html>
