@@ -25,14 +25,12 @@
 
     <script>
         let num, tabuada;
-        let contador, contagem;
 
         // Perguntar ao usuário qual exercício deseja ver
-        let ex = parseFloat(window.prompt('Qual exercício deseja ver? \nAtualmente, temos do exercício 1 ao 14!'));
+        let ex = parseFloat(window.prompt('Qual exercício deseja ver? \nAtualmente, temos do exercício 1 ao 15!'));
 
         if (ex === 13) {
-
-            // Função para calcular e preencher a tabuada [ Exercício 13 ]
+            // Script para carregar o exercício [ 13 ]
             function calcularTabuada(numero) {
                 let tabuada = "";
                 let linha = "";
@@ -50,25 +48,26 @@
             if (textarea) {
                 textarea.textContent = tabuada;
                 textarea.style.display = 'block';
-            }
+            } 
+
             else {
                 console.error('Textarea não encontrada no documento.');
             }
-        }
+        } 
 
-        if (ex === 15) {
+        else if (ex === 15) {
+            // Script para carregar o exercício [ 15 ]
+            let script = document.createElement('script');
+            script.src = 'Ex-15.js'; 
+            document.body.appendChild(script);
+        } 
 
-            // Contador [ Exercício 15 ]
-            
-        }
-        
-
-        // Verificar qual exercício foi escolhido
         else if (ex >= 1 && ex <= 14) {
+            // Script para carregar outros exercício [ 1 ~ 14 ]
             let script = document.createElement('script');
             script.src = 'Ex-' + ex + '.js';
             document.body.appendChild(script);
-        }
+        } 
 
         else {
             alert('Nenhum exercício encontrado.');
