@@ -48,19 +48,21 @@
 
     <main>
         <h2 style="text-align: center; margin-top: 50px; margin-bottom: 35px;">Entre em contato conosco!</h2>
-        <form action="" method="post">
+        <div id="messagebox" style="display: none; text-align: center;"></div>
+
+        <form action="../PHP/salvarmsg.php" method="post">
             <label for="nome">Nome</label>
             <input type="text" name="nome" id="idNome" placeholder="Digite seu nome">
 
             <label for="assunto">Assunto</label>
             <select name="assunto" id="idAssunto">
-                <option value="elogio">Elogio</option>
-                <option value="reclamacao">Reclamação</option>
-                <option value="sugestao" selected>Sugestão</option>
-                <option value="duvida">Dúvida</option>
+                <option value="Elogio">Elogio</option>
+                <option value="Reclamacao">Reclamação</option>
+                <option value="Sugestao" selected>Sugestão</option>
+                <option value="Duvida">Dúvida</option>
             </select>
 
-            <textarea name="" id="" cols="30" rows="10" placeholder="Fale um pouco mais sobre o assunto escolhido" maxlength="300"></textarea>
+            <textarea name="mensagem" id="" cols="30" rows="10" placeholder="Fale um pouco mais sobre o assunto escolhido" maxlength="300"></textarea>
 
             <label for="email">Email</label>
             <input type="email" name="email" id="idEmail" placeholder="Digite seu email">
@@ -80,5 +82,25 @@
                
         <p><i>Gabriel Marota Campos</i></p>
     </footer>
+
+    <script>
+        window.onload = function(){
+            const urlParams = new URLSearchParams(window.location.search);
+            const status = urlParams.get('status');
+            const messagebox = document.getElementById('messagebox');
+
+            if (status === 'success'){
+                messagebox.style.display = 'block';
+                messagebox.innerHTML = 'Mensagem enviada com sucesso!';
+                messagebox.style.color = 'green';
+            }
+            else if (status === 'error'){
+                messagebox.style.display = 'block';
+                messagebox.innerHTML = 'Houve um erro ao enviar a mensagem';
+                messagebox.style.color = 'red';
+            }
+        }
+    </script>
+
 </body>
 </html>
