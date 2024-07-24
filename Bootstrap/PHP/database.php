@@ -1,7 +1,7 @@
 <?php
     $user = "root";
     $password = "1234";
-    $bd = "ubisoft";
+    $bd = "autoescola";
     $host = "localhost";
 
     try{
