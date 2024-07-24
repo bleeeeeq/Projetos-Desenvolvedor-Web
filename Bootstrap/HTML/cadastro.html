@@ -48,79 +48,67 @@
 
     <!--Tela Cadastro-->
     <h1 style="text-align: center; margin-top: 55px;">Tela Cadastro</h1>
-    <form class="cadastro">
-        <div class="form-row">
-
-            <div class="form-group col-md-6">
-                <label for="inputEmail4">Email</label>
-                <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
-            </div>
-
-            <div class="form-group col-md-6">
-                <label for="inputPassword4">Senha</label>
-                <input type="password" class="form-control" id="inputPassword4" placeholder="Senha">
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label for="inputAddress">Endereço</label>
-            <input type="text" class="endereco" id="inputAddress" placeholder="Rua dos Bobos, nº 0">
-        </div>
-
-        <div class="form-group">
-            <label for="inputAddress2">Endereço 2</label>
-            <input type="text" class="endereco" id="inputAddress2" placeholder="Apartamento, hotel, casa, etc.">
-        </div>
+    <div id="messagebox" style="display: none; text-align: center;"></div>
+    <form class="cadastro" action="../PHP/salvar.php" method="post">
 
         <div class="form-row">
-            <div class="form-group col-md-6">
-                <label for="inputCity">Cidade</label>
-                <input type="text" class="form-control" id="inputCity">
+            <div class="form-group">
+                <label for="nome">Nome</label>
+                <input type="text" class="form-control" id="idNome" name="nome" size="50">
             </div>
 
-            <div class="form-group col-md-4">
-                <label for="inputEstado">Estado</label>
-                <select id="inputEstado" class="form-control">
-                    <option>AC - ACRE</option>
-                    <option>AL - ALAGOAS</option>
-                    <option>AP - AMAPÁ</option>
-                    <option>AM - AMAZONAS</option>
-                    <option>BA - BAHIA</option>
-                    <option>CE - CEARÁ</option>
-                    <option>DF - DISTRITO FEDERAL</option>
-                    <option>ES - ESPÍRITO SANTO</option>
-                    <option>GO - GOIÁS</option>
-                    <option>MA - MARANHÃO</option>
-                    <option>MT - MATO GROSSO</option>
-                    <option>MS - MATO GROSSO DO SUL</option>
-                    <option>MG - MINAS GERAIS</option>
-                    <option>PA - PARÁ</option>
-                    <option>PB - PARAIBA</option>
-                    <option>PR - PARANÁ</option>
-                    <option>PE - PERNAMBUCO</option>
-                    <option>PI - PIAUÍ</option>
-                    <option>RJ - RIO DE JANEIRO</option>
-                    <option>RN - RIO GRANDE DO NORTE</option>
-                    <option>RS - RIO GRANDE DO SUL</option>
-                    <option>RO - RONDÔNIA</option>
-                    <option>RR - RORAIMA</option>
-                    <option>SC - SANTA CATARINA</option>
-                    <option>SP - SÃO PAULO</option>
-                    <option>SE - SERGIPE</option>
-                    <option>TO - TOCANTINS</option>
+            <div class="form-group">
+                <label for="sobrenome">Sobrenome</label>
+                <input type="text" class="form-control" id="idSobrenome" name="sobrenome" size="50">
+            </div>
+
+            <div class="form-group">
+                <label for="sexo">Sexo</label>
+                <select id="idSexo" class="form-control" name="sexo">
+                    <option value="MA">Masculino</option>
+                    <option value="FE">Feminino</option>
+                    <option value="OU">Outro</option>
                 </select>
             </div>
+        </div>
 
-            <div class="form-group col-md-2">
-                <label for="inputCEP">CEP</label>
-                <input type="text" class="form-control" id="inputCEP">
+
+        <div class="form-row">
+            <div class="form-group ">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="idEmail" placeholder="Email" name="email" size="50">
+            </div>
+
+            <div class="form-group ">
+                <label for="senha">Senha</label>
+                <input type="password" class="form-control" id="idSenha" placeholder="Senha" name="senha" size="20">
+            </div>
+        </div>
+
+        <div class="form-group ">
+            <label for="endereco">Endereço</label>
+            <input type="text" class="form-control" id="idEndereco" placeholder="Rua dos Bobos, nº 0" name="endereco">
+        </div>
+
+        <div class="form-row">
+            <div class="form-group">
+                <label for="cidade">Cidade</label>
+                <input type="text" class="form-control" id="idCidade" name="cidade">
+            </div>
+
+            <div class="form-group ">
+                <label for="estado">Estado</label>
+                <select id="idEstado" class="form-control" name="estado">   
+               
+                </select>
             </div>
         </div>
 
         <div class="form-group">
             <div class="form-check">
-                <input class="form-check-input is-invalid" type="checkbox" value="" id="invalidCheck3" required>
-                <label class="form-check-label" for="invalidCheck3">
+                <input class="form-check-input is-invalid" type="checkbox" value="" id="idConcordo" name="concordo"
+                    required>
+                <label class="form-check-label" for="concordo">
                     Concordo com os termos e condições
                 </label>
                 <div class="invalid-feedback">
@@ -142,6 +130,48 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
         integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous">
         </script>
+
+    <script>
+        window.onload = function () {
+            const urlParams = new URLSearchParams(window.location.search);
+            const status = urlParams.get('status');
+            const messagebox = document.getElementById('messagebox');
+
+            if (status === 'success') {
+                messagebox.style.display = 'block';
+                messagebox.innerHTML = 'Cadastro feito com sucesso!';
+                messagebox.style.color = 'green';
+            }
+            else if (status === 'error') {
+                messagebox.style.display = 'block';
+                messagebox.innerHTML = 'Houve um erro ao enviar se cadastrar!';
+                messagebox.style.color = 'red';
+            }
+        }
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const selectElement = document.getElementById('idEstado');
+
+            // API que retorna os estados do Brasil
+            const apiUrl = 'https://servicodados.ibge.gov.br/api/v1/localidades/estados';
+
+            fetch(apiUrl)
+                .then(response => response.json())
+                .then(data => {
+                    data.sort((a, b) => a.nome.localeCompare(b.nome)); // Ordena os estados por nome
+                    data.forEach(state => {
+                        const option = document.createElement('option');
+                        option.value = state.sigla;
+                        option.textContent = state.nome;
+                        selectElement.appendChild(option);
+                    });
+                })
+                .catch(error => console.error('Erro ao carregar os estados:', error));
+        });
+    </script>
+
 </body>
 
 </html>
