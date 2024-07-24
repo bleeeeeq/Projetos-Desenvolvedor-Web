@@ -35,19 +35,7 @@ body{
     display: flex;
 }
 
-form input[type="email"]{
-    margin-bottom: 15px;
-}
 
-#inputEstado{
-    width: 15%;
-    margin-bottom: 15px;
-}
-
-.endereco{
-    width: 98%;
-    margin-bottom: 15px;
-}
 
 nav{   
     padding: 20px 0;
@@ -58,4 +46,13 @@ nav{
 
 div{
     margin-left: 20px;
+}
+
+#idEndereco{
+    width: 56.5%;
+    margin-left: -5px;
+}
+
+label{
+    margin-left: -2px;
 }
