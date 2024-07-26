@@ -1,27 +1,25 @@
 <?php
-    include 'database.php';
-    if(isset($_POST['logar'])){
-        $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_STRING);
-        $senha = filter_input(INPUT_POST, 'senha', FILTER_SANITIZE_STRING);
+include 'database.php';
 
-        if(strlen($_POST['email'])==0){     
-            echo "<script>
-                alert ('Preencha o campo email.')
-            </script>";                     
-        }
+$error_message = '';
+if (isset($_POST['logar'])) {
+    $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_STRING);
+    $senha = filter_input(INPUT_POST, 'senha', FILTER_SANITIZE_STRING);
 
-        else if(strlen($_POST['senha'])==0){
-            echo "<script>
-                alert ('Preencha o campo senha.')
-            </script>";
-        }
+    if (strlen($email) == 0) {
+        $error_message = 'Preencha o campo email.';
+    } 
 
-        else{
+    else if (strlen($senha) == 0) {
+        $error_message = 'Preencha o campo senha.';
+    } 
 
-        }
+    else {
+        // Código de login, quando for feito
     }
+}
 
-    // echo "<br> Preencha o campo 'email'.";
-    // echo "<br> Preencha o campo 'senha'.";
-    // echo $email.' .' . $senha;
+if ($error_message) {
+    echo "<script>alert('$error_message'); window.history.back();</script>";
+}
 ?>
