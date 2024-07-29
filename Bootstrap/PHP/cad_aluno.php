@@ -31,7 +31,7 @@ include 'database.php';
             }
 
         //$stmt
-         $declaracao = $conexao->prepare("INSERT INTO `cadaluno`(`nome`,`cpf`,`celular`,`whatsapp`,`email`,`categoria`) VALUES (?,?,?,?,?,?)");
+        $declaracao = $conexao->prepare("INSERT INTO `cadaluno`(`nome`,`cpf`,`celular`,`whatsapp`,`email`,`categoria`) VALUES (?,?,?,?,?,?)");
 
         $declaracao->bind_param("ssssss", $nome, $cpf, $celular, $whatsapp, $email, $categoria);
         if ($declaracao->execute()){
