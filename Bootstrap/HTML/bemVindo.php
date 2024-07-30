@@ -24,7 +24,7 @@
         <p>Hoje é dia <span id="dataAtual"></span>.</p>
         <p>Clique no menu e escolha o que deseja fazer:</p>
         <div class="menu">
-            <a href="#cadastrarAluno">Cadastrar Aluno</a>
+            <a href="cad_aluno.php">Cadastrar Aluno</a>
             <a href="#cadastrarCarro">Cadastrar Carro</a>
             <a href="#agendarAula">Agendar Aula</a>
         </div>
