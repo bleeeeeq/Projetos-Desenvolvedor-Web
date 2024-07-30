@@ -11,8 +11,8 @@ include 'database.php';
         
         if(empty($nome) || empty($cpf) || empty($celular) || empty($whatsapp) || empty($email) || empty($categoria)){
             echo"<script>
-                    alert('Preencha todos os campos!!!');
-                    window.location.href ='../HTML/cad_aluno.html;'
+                    alert('Preencha todos os campos!');
+                    window.location.href ='../HTML/cad_aluno.php;'
                 </script>";
             exit;
         }
@@ -24,10 +24,12 @@ include 'database.php';
         
         if($declaracao->num_rows>0){
             echo"<script>
-                  alert('Esse CPF já foi cadastrado no sistema!!!');
-                  window.location.href ='../HTML/cad_aluno.html;'
+                  alert('Esse CPF já foi cadastrado no sistema!');
+                  window.location.href ='../HTML/cad_aluno.php'
                 </script>";
-             $declaracao->close();
+
+            exit;
+            $declaracao->close();
             }
 
         //$stmt
@@ -37,7 +39,7 @@ include 'database.php';
         if ($declaracao->execute()){
             echo" <script>
                 alert('Aluno cadastrado com sucesso');
-                 window.location.href ='../HTML/cad_aluno.html'
+                 window.location.href ='../HTML/cad_aluno.php'
             </script>";
         }
 
@@ -45,5 +47,38 @@ include 'database.php';
             echo "Erro ao cadastrar um aluno: " . $declaracao->error;
         }
     }
+
+    if (isset($_POST['btnCpf'])){
+        $buscar_cpf = $_POST['cpf'];
+    }
+
+    // Consulta para buscar o CPF
+    $stmt = $conexao->prepare("select nome, cpf, celular, whatsapp, email, categoria from cadaluno where cpf = ?");
+    $stmt -> bind_param("s", $buscar_cpf);
+    $stmt -> execute();
+    $stmt -> store_result();
+
+    if($stmt -> num_rows > 0){
+        $stmt -> bind_result ($nome, $cpf, $celular, $whatsapp, $email, $categoria);
+        $stmt -> fetch();
+        $_SESSION['nome'] = $nome;
+        $_SESSION['cpf'] = $cpf;
+        $_SESSION['celular'] = $celular;
+        $_SESSION['whatsapp'] = $whatsapp;
+        $_SESSION['email'] = $email;
+        $_SESSION['categoria'] = $categoria;
+        header("Location: ../HTML/cad_aluno.php");
+    }
+
+    else{
+        echo "<script>
+        alert ('CPF não encontrado!')
+        window.location.href '../HTML/cad_aluno.php'
+        </script>";
+    }
+
+    // Fecha a declaração e a conexão
+    $stmt -> close();
+    $conexao -> close();
 
 ?>
