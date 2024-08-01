@@ -19,9 +19,11 @@
     $resultado = $conexao->query($sql);
     if ($resultado -> num_rows > 0){
         while ($linha = $resultado -> fetch_assoc()){
+            $formatarData = date('d/m/Y', strtotime ($linha['data']));
+            $formatarHora = date('H:i', strtotime ($linha['hora']));
             $results .=  "<tr>
-                            <td>{$linha['data']}</td>
-                            <td>{$linha['hora']}</td>
+                            <td>{$formatarData}</td>
+                            <td>{$formatarHora}</td>
                             <td>{$linha['instrutor']}</td>
                             <td>{$linha['aluno']}</td>
                             <td>{$linha['veiculo']}</td>
