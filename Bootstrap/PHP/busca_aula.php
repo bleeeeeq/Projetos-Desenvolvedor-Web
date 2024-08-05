@@ -46,12 +46,12 @@
                             <td>{$linha['veiculo']}</td>
 
                             <td><form action='../PHP/busca_aula.php' method='POST' style ='display: inline;'>
-                                <input type='text' name='delete_id' value='{$linha['idaula']}'>
+                                <input type='hidden' name='delete_id' value='{$linha['idaula']}'>
                                 <button type='submit' name='delete'>Deletar</button>
                             </form>
 
                             <form action='#' method='GET' style ='display: inline;'>
-                                <input type='text' name='editar_id' value='{$linha['idaula']}'>
+                                <input type='hidden' name='editar_id' value='{$linha['idaula']}'>
                                 <button type='submit' name='edit'>Editar</button>
                             </form></td>                            
                         </tr>";                       
