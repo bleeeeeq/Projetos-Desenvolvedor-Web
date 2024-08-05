@@ -74,6 +74,7 @@
                     <th>Instrutor</th>
                     <th>Aluno</th>
                     <th>Veículo</th>
+                    <th>Opção</th>
                 </tr>
             </thead>
             <tbody>
