@@ -1,5 +1,22 @@
 <?php
     include 'database.php';
+    if(isset($_POST['delete_id'])){
+        $id = $_POST['delete_id'];
+        $declaracao = "DELETE FROM `aula` WHERE idaula = ? ;";
+        $declaracao = $conexao -> prepare($declaracao);
+        $declaracao -> bind_param("i", $id);
+
+        if($declaracao -> execute()){
+            header("Location: ../HTML/tabelaAula.php?message=Deletado com sucesso!");
+        }
+        else{
+            header("Location: ../HTML/tabelaAula.php?message=Erro ao deletar");
+        }
+
+        $declaracao -> close();
+        $conexao -> close();
+        exit();
+    }
     $sql = "SELECT * FROM aula";
     $results = '';
 
@@ -27,7 +44,17 @@
                             <td>{$linha['instrutor']}</td>
                             <td>{$linha['aluno']}</td>
                             <td>{$linha['veiculo']}</td>
-                        </tr>";
+
+                            <td><form action='../PHP/busca_aula.php' method='POST' style ='display: inline;'>
+                                <input type='text' name='delete_id' value='{$linha['idaula']}'>
+                                <button type='submit' name='delete'>Deletar</button>
+                            </form>
+
+                            <form action='#' method='GET' style ='display: inline;'>
+                                <input type='text' name='editar_id' value='{$linha['idaula']}'>
+                                <button type='submit' name='edit'>Editar</button>
+                            </form></td>                            
+                        </tr>";                       
         }
     }
 
