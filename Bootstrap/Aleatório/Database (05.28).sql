@@ -32,8 +32,10 @@ CREATE TABLE `aula` (
   `aluno` varchar(60) NOT NULL,
   `veiculo` varchar(45) NOT NULL,
   `pago` varchar(45) NOT NULL,
-  PRIMARY KEY (`idaula`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `cpf` varchar(15) DEFAULT NULL,
+  PRIMARY KEY (`idaula`),
+  UNIQUE KEY `cpf_UNIQUE` (`cpf`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -42,7 +44,7 @@ CREATE TABLE `aula` (
 
 LOCK TABLES `aula` WRITE;
 /*!40000 ALTER TABLE `aula` DISABLE KEYS */;
-INSERT INTO `aula` VALUES (1,'2024-07-31','17:45:00','julinhadograu','igu_IM','peugeot 207','óbvio'),(3,'2025-07-31','20:30:00','Abílio Abelhudo','Tarças C#','Kombi','SIM!'),(5,'2025-07-31','20:30:00','Abílio Abelhudo','Abílio Abelhudo','Kombi','SIM!');
+INSERT INTO `aula` VALUES (1,'2024-07-31','17:45:00','julinhadograu','igu_IM','peugeot 207','sim','123.456.789-11'),(3,'2025-07-31','20:30:00','Abílio Abelhudo','Tarças C#','Kombi','sim','321.132.312-41'),(5,'2025-07-31','20:30:00','Abílio Abelhudo','Abílio Abelhudo','Kombi','nao','321.132.312-45'),(6,'2024-08-27','17:10:00','abio abeia','abeia abeia','pitbull','nao','321.421.999-84');
 /*!40000 ALTER TABLE `aula` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -124,4 +126,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-08-05 11:51:16
+-- Dump completed on 2024-08-07 11:54:02
