@@ -20,8 +20,8 @@
         $aluno = '';
         $data = '';
         $hora = '';
-        $paga = '';
-        $carro = '';
+        $pago = '';
+        $veiculo = '';
         
         // Verifica se um ID foi passado na URL
         if (isset($_GET['id'])) {
@@ -38,11 +38,11 @@
             if ($resultado->num_rows > 0) {
                 $linha = $resultado->fetch_assoc();
                 $instrutor = $linha['instrutor'];
-                //$cpf = $linha['cpf'];
+                $cpf = $linha['cpf'];
                 $aluno = $linha['aluno'];
                 $data = date('Y-m-d', strtotime($linha['data']));
                 $hora = $linha['hora'];
-                $pago = $linha['paga'];
+                $pago = $linha['pago'];
                 $veiculo = $linha['veiculo'];
             }
             
@@ -51,7 +51,7 @@
         $conexao->close();
 
         ?>
-        <form action="../PHP/editar_aula.php" method="post">
+        <form action="../PHP/cad_aula.php" method="post">
         <input type="hidden" name="id" value="<?php echo $id; ?>">
             <label for="instrutor">Nome do Instrutor:</label>
             <input type="text" id="instrutorID" name="instrutor" value="<?php echo $instrutor; ?>" >
@@ -72,14 +72,14 @@
             
             <label for="pago">Aula Paga?</label>
             <select id="pagoID" name="pago">
-                <option value="sim" <?php if ($paga == 'sim') echo 'selected'; ?>>Sim</option>
-                <option value="nao"<?php if ($paga == 'não') echo 'selected'; ?>>Não</option>
+                <option value="sim" <?php if ($pago == 'sim') echo 'selected'; ?>>Sim</option>
+                <option value="nao"<?php if ($pago == 'nao') echo 'selected'; ?>>Não</option>
             </select>
             
             <label for="veiculo">Marca do Carro:</label>
-            <input type="text" id="veiculoID" name="veiculo" value="<?php echo $carro; ?>" required>
+            <input type="text" id="veiculoID" name="veiculo" value="<?php echo $veiculo; ?>" required>
             
-            <button type="submit" class="button">Agendar</button>
+            <button type="submit" class="button" name="agendar">Agendar</button>
         </form>
     </div>
 </body>
