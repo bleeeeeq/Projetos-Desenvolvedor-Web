@@ -19,15 +19,16 @@
     }
 
     if(isset($_POST['editar_id'])){
-        $idEditar = $_POST['editar_id'];
+        $id = $_POST['editar_id'];
         echo"<script>
-        if(confirm('Você realmente deseja editar essa aula?')){
-            window.location.href = '../HTML/cadastrarAula.php'
-        }
-        else{
-            window.location.href = '../HTML/tabelaAula.php'
-        }
+            if(confirm('Você realmente deseja editar essa aula?')){
+                window.location.href = '../HTML/cadastrarAula.php?id=$id';
+            }
+            else{
+                window.location.href = '../HTML/tabelaAula.php';
+            }
     </script>";
+    exit();
     }
 
     $sql = "SELECT * FROM aula";
@@ -63,9 +64,9 @@
                                 <button type='submit' name='delete'>Deletar</button>
                             </form>
 
-                            <form action='' method='POST' style ='display: inline;'>
+                            <form action='../PHP/busca_aula.php' method='POST' style ='display: inline;'>
                                 <input type='hidden' name='editar_id' value='{$linha['idaula']}'>
-                                <button type='submit' name='editar' onclick='return confirmaEdicao(this.form)'>Editar</button>
+                                <button type='submit' name='editar'>Editar</button>
                             </form></td>                            
                         </tr>";                       
         }
