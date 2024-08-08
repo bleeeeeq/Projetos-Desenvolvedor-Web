@@ -8,8 +8,7 @@
    
 </head>
 <body>
-    <div class="container">
-        <h1>Agendar Aula</h1>
+    <div class="container">       
         <?php
         include '../PHP/database.php';
         
@@ -26,6 +25,9 @@
         // Verifica se um ID foi passado na URL
         if (isset($_GET['id'])) {
             $id = $_GET['id'];
+            ?>
+            <h1>Editar Aula</h1>
+            <?php
             
             // Busca os dados da aula pelo ID
             $sql = "SELECT * FROM aula WHERE idaula = ?";
@@ -47,8 +49,15 @@
             }
             
             $stmt->close();
-        }       
+        }  
+
+        else{
+            ?>
+            <h1>Salvar Aula</h1>
+            <?php
+        }     
         $conexao->close();
+        
 
         ?>
         <form action="../PHP/cad_aula.php" method="post">
@@ -57,7 +66,7 @@
             <input type="text" id="instrutorID" name="instrutor" value="<?php echo $instrutor; ?>" >
 
             <label for="aluno">CPF do Aluno:</label>
-            <input type="text" id="cpfID" name="cpf"value="<?php echo $cpf; ?>" >
+            <input type="text" id="cpfID" name="cpf"value="<?php echo $cpf; ?>">
 
             <button type="submit" class="button">Buscar</button>
 
