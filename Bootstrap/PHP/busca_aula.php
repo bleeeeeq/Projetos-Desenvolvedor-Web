@@ -1,5 +1,7 @@
 <?php
+    session_start();
     include 'database.php';
+
     if(isset($_POST['delete_id'])){
         $id = $_POST['delete_id'];
         $declaracao = "DELETE FROM `aula` WHERE idaula = ? ;";
@@ -7,14 +9,15 @@
         $declaracao -> bind_param("i", $id);
 
         if($declaracao -> execute()){
-            header("Location: ../HTML/tabelaAula.php?message=Deletado com sucesso!");
+            $_SESSION['msg'] = "A aula foi deletada com sucesso!";
         }
         else{
-            header("Location: ../HTML/tabelaAula.php?message=Erro ao deletar");
+            $_SESSION['msg'] = "A aula não foi deletada!";
         }
-
+       
         $declaracao -> close();
         $conexao -> close();
+        header("Location: ../HTML/tabelaAula.php");
         exit();
     }
 
@@ -78,8 +81,10 @@
                     </tr>";                        
     }
 
+    $_SESSION['results'] = $results;
+
     $conexao -> close();
-    header ("Location: ../HTML/tabelaAula.php?results=".urlencode($results));
+    header ("Location: ../HTML/tabelaAula.php?");
     exit();
 
 ?>
