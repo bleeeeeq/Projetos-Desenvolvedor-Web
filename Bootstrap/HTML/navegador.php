@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/style2.css">
     <title>Document</title>
 </head>
 <body>
@@ -16,5 +17,12 @@
         <a href="#">Contas</a>
         <a href="#">Sair</a>
     </nav>
+
+    <footer>
+        <p>&copy; 2024 Auto Escola ABEIA</p>
+        <p>Suporte Técnico</p>
+        <a href="mailto:suporte@email.com"><img src="../IMG/email.png" width="2%" alt=""></a>
+        <a href="https://wa.me/553999999999" target="_blank"><img src="../IMG/whats.png" width="2%" alt=""></a>
+    </footer>
 </body>
 </html>
