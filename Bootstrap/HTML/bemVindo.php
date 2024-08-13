@@ -1,12 +1,12 @@
 <?php
     session_start();
-    if(isset($_SESSION['nome'])){
+    /*if(isset($_SESSION['nome'])){
         $nomeUsuario = $_SESSION['nome'];
     }
 
     else{
         header("location: login.html");
-    }
+    }*/
 ?>
 
 <!DOCTYPE html>
@@ -15,10 +15,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../CSS/style1.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/style2.css">
     <title>Página Inicial - Autoescola</title>
    
 </head>
 <body>
+    <?php
+        include_once "navegador.php";
+    ?>
     <div class="container">
         <h1>Olá, <?php echo htmlspecialchars ($nomeUsuario) ?>!</h1>
         <p>Hoje é dia <span id="dataAtual"></span>.</p>
@@ -26,7 +30,7 @@
         <div class="menu">
             <a href="cad_aluno.php">Cadastrar Aluno</a>
             <a href="#cadastrarCarro">Cadastrar Carro</a>
-            <a href="#agendarAula">Agendar Aula</a>
+            <a href="cadastrarAula.php">Agendar Aula</a>
         </div>
     </div>
 
