@@ -11,7 +11,7 @@
             throw new Exception("Falha ao se conectar: ( ". $conexao->connect_errno . " )" .$conexao->connect_error);
         }       
 
-        echo "Conexão funcionando!";   
+        //echo "Conexão funcionando!";   
     } 
 
     catch (Exception $e){
