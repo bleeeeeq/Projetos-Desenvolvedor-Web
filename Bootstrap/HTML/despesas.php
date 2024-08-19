@@ -1,8 +1,11 @@
 <?php
+    include '../php/database.php';
     session_start();
 ?>
 <!-- CRIANDO AS LISTAS -->
 <?php
+    $contas = $_SESSION['contas']??'';
+    $totalFormatado = $_SESSION['totalFormatado']??'0,00';
     $despesas = ["Depesas com Funcionário"=>["Salário","Vale transporte","Vale alimentação"],"Despesas com Carros"=>["Oficina","Gasolina","Lavagem"],"Despesas Fixas"=>["Luz","Água","Aluguel"],"Despesas Eventuais"=>["Solicitar autorização"]];
 
     $tipoSelecionado = $_POST["tipo"]??'';
@@ -37,6 +40,8 @@
     </form>
 
     <form action="../PHP/contas.php" method="POST">
+        <input type="hidden" name="tipo" value="<?php echo $tipoSelecionado; ?>">
+
         <label for="descricao">Descrição:</label>
         <select name="descricao" id="descricao" required>
             <?php
@@ -77,11 +82,11 @@
             </tr>
         </thead>
         <tbody>
-            <!-- Adicione as linhas de despesas aqui -->
+            <?php echo $contas ?>
         </tbody>
     </table>
 
-    <h3>Total:<!-- <?php echo number_format($total, 2, ',', '.'); ?>--></h3>
+    <h3> Total: R$ <?php echo $totalFormatado; ?> </h3>
 </div>
 </body>
 </html>
