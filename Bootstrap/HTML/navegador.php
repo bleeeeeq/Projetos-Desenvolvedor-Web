@@ -14,8 +14,8 @@
         <a href="#">Cadastrar Carro</a>
         <a href="cadastrarAula.php">Cadastrar Aula</a>
         <a href="tabelaAula.php">Buscar Aula</a>
-        <a href="#">Contas</a>
-        <a href="#">Sair</a>
+        <a href="despesas.php">Contas</a>
+        <a href="sair.php">Sair</a>
     </nav>
 
     <footer>
