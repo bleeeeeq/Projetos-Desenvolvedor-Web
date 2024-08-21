@@ -8,6 +8,9 @@
    
 </head>
 <body>
+    <?php
+        include_once "navegador.php";
+    ?>
     <div class="container">       
         <?php
         include '../PHP/database.php';

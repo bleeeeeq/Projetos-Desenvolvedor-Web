@@ -1,5 +1,7 @@
 <?php
     session_start();
+    include_once "navegador.php";
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">

@@ -70,6 +70,9 @@
     </style>
 </head>
 <body>
+    <?php
+        include_once "navegador.php";
+    ?>
     <div class="container">
         <h1>Buscar Aulas Agendadas</h1>
         <form class="search-form" method="POST" action="../PHP/busca_aula.php">

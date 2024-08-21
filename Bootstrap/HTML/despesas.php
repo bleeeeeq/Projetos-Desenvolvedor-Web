@@ -1,6 +1,7 @@
 <?php
     include '../php/database.php';
     session_start();
+    include_once '../html/navegador.php';
 ?>
 <!-- CRIANDO AS LISTAS -->
 <?php
