@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+    function criarSite(){
+        // Configs do !golpe
+        document.body.style.backgroundColor = 'lightblue';
+        document.body.style.fontFamily = 'Arial, sans-serif';
+        document.body.style.textAlign = 'center';
+        document.body.style.margin = '0';
+        document.body.style.padding = '0';
+
+        // Criando título do !golpe
+        let titulo = document.createElement('h1');
+        let textoTitulo = document.createTextNode('Prêmios de Milhão');
+        titulo.appendChild(textoTitulo);
+        document.body.appendChild(titulo)
+
+        // Criando o parágrafo
+        let paragrafo = document.createElement('p');
+        let textoParagrafo = document.createTextNode('Você é o usuário de 1 milhão da plataforma. Preencha os campos a seguir e resgate o prêmio');
+        paragrafo.appendChild(textoParagrafo);
+        document.body.appendChild(paragrafo);
+
+        // Criando o formulário
+        let formulario = document.createElement('form');
+        formulario.id = 'form';
+        formulario.style.textAlign = 'left';
+        formulario.style.width = '50%';
+        formulario.style.margin = '0 auto';
+
+        let campos = [
+            {label: 'Nome:', tipo: 'text', id: 'nome'},
+            {label: 'CPF:', tipo: 'text', id: 'cpf'},
+            {label: 'E-mail:', tipo: 'text', id: 'email'},
+            {label: 'Data de Nascimento:', tipo: 'date', id: 'dataNascimento'}       
+        ];
+
+        campos.forEach(campo => {
+            let divLinha = document.createElement('div');
+            divLinha.style.marginBottom = '10px';
+
+            let label = document.createElement('label');
+            label.textContent = campo.label;
+            label.style.display = 'inline-block';
+            label.style.width = '150px';
+            label.style.textAlign = 'right';
+            label.style.paddingRight = '10px';
+            divLinha.appendChild(label);
+
+            let input = document.createElement('input');
+            input.type = campo.tipo;
+            input.id = campo.id;
+            input.style.padding = '5px';
+            input.style.width = '60%';
+            divLinha.appendChild(input);
+
+            formulario.appendChild(divLinha);
+        });
+
+        // Criando o campo de seleção de estado civil
+        let divLinhaEstadoCivil = document.createElement('div');
+        divLinhaEstadoCivil.style.marginBottom = '10px';
+        let labelEstadoCivil = document.createElement('label');
+        labelEstadoCivil.textContent = 'Estado Civil:';
+        labelEstadoCivil.style.display = 'inline-block';
+        labelEstadoCivil.style.width = '150px';
+        labelEstadoCivil.style.textAlign = 'right';
+        labelEstadoCivil.style.paddingRight = '10px';
+        divLinhaEstadoCivil.appendChild(labelEstadoCivil);
+
+        let selectEstadoCivil = document.createElement('select');
+        selectEstadoCivil.id = 'estadoCivil:';
+        selectEstadoCivil.style.padding = '5px';
+        selectEstadoCivil.style.width = '62%';
+
+        let opcoesEstadoCivil = ['Solteiro(a)', 'Casado(a)', 'Divorciado(a)', 'Viúvo(a)'];
+        opcoesEstadoCivil.forEach(opcao =>{
+            let option = document.createElement('option');
+            option.value = opcao.toLowerCase();
+            option.textContent = opcao;
+            selectEstadoCivil.appendChild(option);
+        });
+
+        divLinhaEstadoCivil.appendChild(selectEstadoCivil);
+        formulario.appendChild(divLinhaEstadoCivil);
+
+        // Criando o botão de envio
+        let botao = document.createElement('button');
+        botao.type = 'submit';
+        botao.textContent = 'Enviar';
+        botao.style.padding = '10px 20px';
+        botao.style.backgroundColor = 'green';
+        botao.style.color = 'white';
+        botao.style.border = 'none';
+        botao.style.cursor = 'pointer';
+        botao.style.fontSize = '16px';
+        botao.style.marginTop = '10px';
+        botao.style.display = 'block';
+        botao.style.margin = '0 auto';
+        formulario.appendChild(botao);
+
+        // Adicionando o formulário ao body
+        document.body.appendChild(formulario);
+
+        // Criando a imagem rolável
+        let imagemRolavel = document.createElement('img');
+        imagemRolavel.id = 'scrollingImage';
+        imagemRolavel.src = 'GoogleBotPP.png';
+        imagemRolavel.alt = 'Imagem Rolável';
+        imagemRolavel.style.position = 'fixed';
+        imagemRolavel.style.top = '50px';
+        imagemRolavel.style.right = '20px';
+        imagemRolavel.style.width = '100px';
+        imagemRolavel.style.height = '100px';
+        document.body.appendChild(imagemRolavel);
+
+        // Criando a imagem de fundo (inicialmente oculta)
+        let imagemFundo = document.createElement('img');
+        imagemFundo.id = 'backgroundImage';
+        imagemFundo.src = 'tamanduas.png';
+        imagemFundo.alt = 'Imagem de Fundo';
+        imagemFundo.style.display = 'none';
+        imagemFundo.style.position = 'fixed';
+        imagemFundo.style.top = '0';
+        imagemFundo.style.left = '0';
+        imagemFundo.style.width = '100%';
+        imagemFundo.style.height = '100%';
+        imagemFundo.style.zIndex = '9999'; // Z-Index alto para sobrepor tudo
+        //imagemFundo.style.opacity = '0.5';
+        imagemFundo.style.pointerEvents = 'none'; // Permite interação com os elementos abaixo da imagem
+        document.body.appendChild(imagemFundo);
+
+        // Função de envio do formulário com alerta e imagem de fundo
+        formulario.addEventListener('submit', function (event){
+            event.preventDefault(); // Impede o envio do formulário
+
+            alert('Em 30 dias você receberá seu prêmio');
+
+            // Exibe a imagem de fundo após o alerta
+            imagemFundo.style.display = 'block';
+        });
+    }
+
+    // Executando a função ao carregar a página
+    window.onload = criarSite;
+    
+    </script>
+
+</body>
+</html>
