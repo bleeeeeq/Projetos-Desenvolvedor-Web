@@ -56,7 +56,7 @@ if (Escolha == 2) {
 }
 
 if (Escolha == 3) {
-    let A = parseFloat(window.prompt("[1] Digite o que quiser abaixo!"))
+    let A = window.prompt("[1] Digite o que quiser abaixo!")
     let B = window.prompt("[2] Digite o que quiser abaixo!")
 
     if (A === B) {
