@@ -2,8 +2,6 @@
 
 let A = parseFloat(window.prompt("Qual é o valor do número 'A':"))
 
-
-
 if (/^[0-9.,]+$/.test(A)) {
     let B = parseFloat(window.prompt("Qual é o valor do número 'B':"))
     
@@ -17,7 +15,7 @@ if (/^[0-9.,]+$/.test(A)) {
         }
         
         else if (A == B){
-            alert("B é IGUAL que A")
+            alert("B é IGUAL a A")
         }
          
     } 
