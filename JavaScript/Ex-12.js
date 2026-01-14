@@ -1,5 +1,6 @@
 // Exercício [Loop pares 0-10] de JS
 
+alert("Dá uma olhadola no console ai irmãozin")
 for (let i = 0; i <= 10; i+=2){
     console.log (i)
 }
